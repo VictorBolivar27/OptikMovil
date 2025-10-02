@@ -535,6 +535,11 @@ button:hover {
   top: 0;
 }
 
+.boton{
+  text-decoration: none;
+  color: white;
+}
+
 @keyframes move {
   from {
     left: -40px;
