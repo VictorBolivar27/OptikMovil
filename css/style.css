@@ -875,6 +875,23 @@ h2:after {
     gap: 5px;
   }
 }
+header {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden; /* evita el scroll lateral */
+}
+
+.navbar, .header {
+  width: 100%;
+  max-width: 100%;
+}
+
 
 
 
