@@ -83,7 +83,7 @@ p { text-align: justify; }
 /* Encabezado y Navegación */
 /* ======================================= */
 header {
-  background-color: var(--primary-color);
+  background-color: #36454F;
   box-shadow: 0 2px 5px rgba(63, 63, 63, 0.634);
   position: sticky;
   top: 0;
@@ -198,7 +198,7 @@ nav li:focus {
 
 .product-card {
   background-color: var(--white-color);
-  padding: 1.5rem;
+  padding: 0.2rem;
   border-radius: var(--radius);
   box-shadow: var(--shadow-soft);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -219,11 +219,11 @@ nav li:focus {
 }
 
 .product-card p {
-  font-size: 0.75rem;
+  font-size: 0.15rem;
   color: var(--secondary-color);
   text-align: center;
   display: -webkit-box;
-  -webkit-line-clamp: 5; /* texto limitado */
+  -webkit-line-clamp: 9; /* texto limitado */
   -webkit-box-orient: vertical;
   overflow: hidden;
   margin-bottom: 0;
@@ -387,7 +387,7 @@ nav li:focus {
 /* Footer */
 /* ======================================= */
 footer {
-  background-color: var(--dark-color);
+  background-color: #1F3041;
   color: var(--white-color);
   padding: 4rem 5%;
   text-align: center;
@@ -437,27 +437,6 @@ footer h3 {
   margin-top: 2rem;
 }
 
-/* ======================================= */
-/* Botones */
-/* ======================================= */
-.btn-primary {
-  background-color: var(--primary-color);
-  color: var(--white-color);
-  border: none;
-  padding: 0.8rem 1.5rem;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  text-decoration: none;
-  display: inline-block;
-}
-
-.btn-primary:hover,
-.btn-primary:focus {
-  background-color: #0056b3;
-  transform: translateY(-2px);
-}
 
 /* ======================================= */
 /* Botón WhatsApp */
@@ -532,7 +511,7 @@ footer h3 {
 
 .btn-banner {
   display: inline-block;
-  background: rgb(20, 58, 173);
+  background: #36454F;
   color: white;
   padding: 10px 20px;
   text-decoration: none;
@@ -542,7 +521,7 @@ footer h3 {
 }
 
 .btn-banner:hover {
-  background: #256de9;
+  background: #4b6172;
 }
 
 .logo{
@@ -567,7 +546,7 @@ h2:after {
   display: block;
   width: 60px; /* Ancho de la línea */
   height: 3px; /* Grosor de la línea */
-  background: var(--primary-color);
+  background: #6d96b0;
   
   /* Centrado fácil */
   margin: 0 auto; 
@@ -892,6 +871,243 @@ body {
   max-width: 100%;
 }
 
+
+.hero-image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+}
+
+
+/* ======================================= */
+/* Importación de Fuentes y Variables */
+/* ======================================= */
+/* Nota: Se han consolidado los imports para evitar redundancia */
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@400;600;700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:wght@400;700&display=swap');
+
+:root {
+  /* Colores */
+  --primary-color: rgb(20, 58, 173);
+  --secondary-color: #6c757d;
+  --dark-color: #343a40;
+  --light-color: #f8f9fa;
+  --white-color: #fff;
+
+  /* Tipografías - VINTAGE (Serif) y MODERNA (Sans-Serif) */
+  --font-display-serif: 'Libre Baskerville', serif; /* Títulos, logos, un toque vintage */
+  --font-text-serif: 'Playfair Display', serif; /* Títulos secundarios o secciones especiales */
+  --font-text-sans: 'Open Sans', 'Montserrat', sans-serif; /* Cuerpo de texto, navegación, legibilidad */
+  --font-nav-sans: 'Montserrat', sans-serif; /* Navegación y botones */
+  
+  /* Sombras y Bordes */
+  --shadow-soft: 0 4px 10px rgba(0, 0, 0, 0.08);
+  --shadow-strong: 0 10px 25px rgba(0, 0, 0, 0.15);
+  --radius: 10px;
+
+  /* Tamaños de fuente */
+  --fs-small: 0.9rem;
+  --fs-base: 1rem;
+  --fs-large: 1.3rem;
+}
+
+/* ======================================= */
+/* Reset General y Aplicación Global */
+/* ======================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* **IMPORTANTE:** ELIMINAMOS EL SELECTOR * { font-family: ... } */
+/* Esto elimina el conflicto que aplica la fuente a TODOS los elementos, 
+   incluidos iconos y otros que no deberían tenerla. */
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Fuente base para todo el cuerpo de texto - Priorizamos la legibilidad */
+body {
+  font-family: var(--font-text-sans); /* Open Sans o Montserrat para mejor lectura */
+  line-height: 1.6;
+  color: var(--dark-color);
+  background-color: #F7F5F0;
+  overflow-x: hidden;
+  margin: 0;
+}
+
+/* ======================================= */
+/* Tipografía de Títulos (VINTAGE) */
+/* ======================================= */
+h1, h2, h3 {
+  /* Usamos la Serif Elegante y Vintage para los títulos principales */
+  font-family: var(--font-display-serif); /* Libre Baskerville */
+  color: var(--dark-color);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+
+p { 
+  text-align: justify; 
+  /* Aseguramos que los párrafos usen la fuente de texto legible */
+  font-family: var(--font-text-sans);
+}
+
+/* Logo en Navegación (Puede ser más moderno para contraste o vintage) */
+nav h1,
+.logo {
+  font-family: var(--font-display-serif); /* Libre Baskerville para un logo vintage */
+  font-weight: 700;
+  font-size: 2rem;
+  color: var(--white-color);
+  margin: 0;
+  display: inline-block;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+}
+
+/* Enlaces de Navegación */
+nav a {
+  font-family: var(--font-nav-sans); /* Montserrat o Open Sans para claridad */
+  font-size: 13px;
+  text-decoration: none;
+  color: var(--white-color);
+  display: inline-block;
+  transition: color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Texto dentro del Hero Banner */
+.hero-text {
+  font-family: var(--font-display-serif); /* Libre Baskerville para elegancia */
+  font-style: italic;
+  /* ... resto de estilos ... */
+}
+
+.hero-text h2 {
+  font-family: var(--font-display-serif); /* Libre Baskerville */
+  /* ... resto de estilos ... */
+}
+
+/* **CORRECCIÓN:** Aseguramos que el cuerpo de texto en "Sobre Nosotros" use la fuente legible */
+.about-text p {
+  font-family: var(--font-text-sans); /* Open Sans o Montserrat */
+}
+
+/* **CORRECCIÓN:** Secciones específicas para que los títulos sean consistentes */
+.about-content h2,
+.services-section h2,
+.info-section h2,
+.payment-section h2,
+.contact-content h2 {
+    font-family: var(--font-display-serif); /* Mantener la consistencia vintage */
+}
+
+/* **CORRECCIÓN:** Restauramos la fuente legible en párrafos de secciones (si ya tienen un selector de fuente más específico) */
+.product-card p,
+.service-item p,
+.info-section p,
+.why-us-section p,
+.payment-item p,
+.footer-contact p {
+  font-family: var(--font-text-sans);
+}
+
+/* ======================================= */
+/* El resto de tu CSS (sin cambios en la funcionalidad o diseño) */
+/* ======================================= */
+/* ... (El resto de tu código CSS para contenedores, secciones, botones y responsividad) ... */
+.about-text h4 {
+  color: #000;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.about-text h2 {
+  font-size: 2.2rem;
+  color: #1b1b1b;
+  margin-bottom: 1rem;
+}
+
+.about-text p {
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+/* ... y todas las secciones y media queries restantes ... */
+
+
+
+/* ======================================= */
+/* Tipografía General */
+/* ======================================= */
+/* ... (El resto de tus estilos H1, H2, H3, P) ... */
+
+/* Estilos para el contenedor del logo en la navegación */
+.logo a {
+    /* Usamos Flexbox para alinear el logo y el texto */
+    display: flex;
+    align-items: center; /* Centra verticalmente la imagen y el texto */
+    gap: 10px; /* Espacio entre el logo y el texto */
+    text-decoration: none; /* Asegura que el enlace no tenga subrayado */
+}
+
+/* Nuevo estilo para la imagen del logo en el header */
+.header-logo {
+    width: 40px; /* Tamaño ideal para un logo en el header de escritorio */
+    height: 40px;
+    object-fit: contain; /* Asegura que la imagen se vea completa */
+    margin: 0; /* Elimina márgenes por defecto */
+    transition: transform 0.3s ease;
+}
+
+.logo a:hover .header-logo {
+    transform: scale(1.1); /* Efecto hover solo en el logo de la imagen */
+}
+
+/* Estilos para el texto OptikMovil dentro del header */
+nav h1 {
+    font-family: var(--font-display-serif);
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--white-color);
+    margin: 0; /* Asegura que no haya margen extra */
+    display: inline-block;
+    /* Se mantiene la sombra de texto si la tienes definida en tus variables */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+}
+
+
+/* ======================================= */
+/* Responsividad para el Logo (Ajustes) */
+/* ======================================= */
+
+/* Pantallas medianas (máx. 768px) */
+@media (max-width: 768px) {
+    nav h1 {
+        font-size: 1.5rem; /* Reduce el tamaño del texto */
+    }
+    .header-logo {
+        width: 35px; /* Reduce ligeramente el tamaño del logo */
+        height: 35px;
+    }
+}
+
+/* Celulares (máx. 480px) */
+@media (max-width: 480px) {
+    nav h1 {
+        font-size: 1.2rem; /* Más pequeño para móviles */
+    }
+    .header-logo {
+        width: 30px; /* Tamaño mínimo para ser legible */
+        height: 30px;
+    }
+}
 
 
 
